@@ -1,13 +1,25 @@
-import logo from "./logo.svg";
-import "./App.css";
+// import "./App.css";
+import React from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
+import AlbumFeatures from "./features/Album";
+import TodoFeatures from "./features/Todo";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Phu Thinh</p>
-      </header>
+      Header
+      <p>
+        <NavLink to="/todos">Todo</NavLink>
+      </p>
+      <p>
+        <NavLink to="/albums">Album</NavLink>
+      </p>
+      <Routes>
+        <Route path="/" Component={TodoFeatures} />
+        <Route path="/todos" Component={TodoFeatures} />
+        <Route path="/albums" Component={AlbumFeatures} />
+      </Routes>
+      Footer
     </div>
   );
 }
